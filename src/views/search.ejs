@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Results</title>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+  <div class="container mt-3">
+    <form action="/search" method="GET" class="mb-4">
+      <div class="input-group">
+        <input 
+          type="text" 
+          name="q" 
+          class="form-control" 
+          value="<%= locals.query || '' %>"
+          required
+        >
+        <button type="submit" class="btn btn-primary">Search</button>
+      </div>
+    </form>
+
+    <% if (locals.results && results.length > 0) { %>
+      <div class="results">
+        <% results.forEach(result => { %>
+          <div class="card mb-3">
+            <div class="card-body">
+              <h5 class="card-title">
+                <a href="<%= result.url %>" target=""><%= result.title %></a>
+                <!-- <a href="/scrape?url=<%= encodeURIComponent(result.url) %>" target="_self">
+                  <%= result.title %>
+                </a> -->
+              </h5>
+              <p class="card-text text-muted small"><%= result.url %></p>
+              
+              <p class="card-text"><%= result.snippet %></p>
+            </div>
+          </div>
+        <% }); %>
+      </div>
+    <% } else if (locals.query) { %>
+      <div class="alert alert-info">
+        No results found for "<%= query %>".
+      </div>
+    <% } %>
+  </div>
+</body>
+</html>

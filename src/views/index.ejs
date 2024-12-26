@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Engine</title>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8 text-center">
+        <h1 class="mb-4">Search Engine</h1>
+        <form action="/search" method="GET" class="mb-4">
+          <div class="input-group">
+            <input 
+              type="text" 
+              name="q" 
+              class="form-control form-control-lg" 
+              placeholder="Enter your search query..."
+              required
+            >
+            <button type="submit" class="btn btn-primary">Search</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

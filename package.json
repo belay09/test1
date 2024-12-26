@@ -1,0 +1,31 @@
+{
+  "name": "search-engine",
+  "version": "1.0.0",
+  "description": "A search engine application with server-side rendering",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "jest",
+    "postinstall": "mkdir -p src/public"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "bootstrap": "^5.3.2",
+    "cheerio": "^1.0.0",
+    "compression": "^1.7.4",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-rate-limit": "^7.1.4",
+    "helmet": "^7.1.0",
+    "http-proxy-agent": "^7.0.0",
+    "node-cache": "^5.1.2",
+    "puppeteer": "^21.5.0",
+    "winston": "^3.11.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.1"
+  }
+}
